@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  background: #F3FBF8;
+  font-family: Segoe UI, sans-serif;
+}
+
+.navbar {
+  background: #2D6A4F;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+.nav-links a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 40px;
+  background: #F3FBF8;
+}
+
+.grid {
+  margin-top: 30px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+
+.card {
+  background: white;
+  border: 2px solid #95D5B2;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(149,213,178,0.7);
+}
