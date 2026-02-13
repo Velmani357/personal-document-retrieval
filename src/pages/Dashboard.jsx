@@ -8,6 +8,7 @@ import {
   FaFileWord,
   FaCompress,
   FaObjectGroup,
+  FaLock,
   FaCut
 } from "react-icons/fa";
 
@@ -43,35 +44,45 @@ export default function Dashboard() {
           <p>Search with multiple keywords</p>
         </div>
 
-        <div className="dash-card">
+        {/* PDF to DOC */}
+        <div className="dash-card" onClick={() => navigate("/pdf-to-doc")}>
           <FaFilePdf className="dash-icon" />
           <h3>PDF → DOCX</h3>
           <p>Convert PDF to Word</p>
         </div>
 
-        <div className="dash-card">
+        {/* DOC to PDF */}
+        <div className="dash-card" onClick={() => navigate("/doc-to-pdf")}>
           <FaFileWord className="dash-icon" />
           <h3>DOCX → PDF</h3>
           <p>Convert Word to PDF</p>
         </div>
 
-        <div className="dash-card">
+        {/* Merge PDF */}
+        <div className="dash-card" onClick={() => navigate("/merge-pdf")}>
           <FaObjectGroup className="dash-icon" />
           <h3>Merge PDF</h3>
           <p>Combine multiple PDFs</p>
         </div>
 
-        <div className="dash-card">
+        {/* Split PDF */}
+        <div className="dash-card" onClick={() => navigate("/split-pdf")}>
           <FaCut className="dash-icon" />
           <h3>Split PDF</h3>
           <p>Split PDF pages</p>
         </div>
 
-        <div className="dash-card">
+        {/* Compress PDF */}
+        <div className="dash-card" onClick={() => navigate("/compress-pdf")}>
           <FaCompress className="dash-icon" />
           <h3>Compress PDF</h3>
           <p>Reduce file size</p>
         </div>
+        <div className="dash-card" onClick={() => navigate("/secure-pdf")}>
+  <FaLock className="dash-icon" />
+  <h3>Secure PDF</h3>
+  <p>Encrypt the files</p>
+</div>
 
       </div>
 

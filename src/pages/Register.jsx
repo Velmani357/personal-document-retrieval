@@ -11,6 +11,11 @@ function Register() {
   const navigate = useNavigate();
 
   const handleRegister = async () => {
+    if (!name || !email || !password) {
+      alert("Please fill all fields");
+      return;
+    }
+
     try {
       const res = await axios.post("http://localhost:5000/api/auth/register", {
         name,
@@ -28,7 +33,7 @@ function Register() {
   return (
     <div className="auth-container">
       <div className="auth-card">
-        <h2> Create Account</h2>
+        <h2>Create Account</h2>
         <p>Register to access your documents</p>
 
         <div className="input-group">
@@ -36,6 +41,7 @@ function Register() {
           <input
             type="text"
             placeholder="Name"
+            value={name}
             onChange={(e) => setName(e.target.value)}
           />
         </div>
@@ -45,6 +51,7 @@ function Register() {
           <input
             type="email"
             placeholder="Email"
+            value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
@@ -54,6 +61,7 @@ function Register() {
           <input
             type="password"
             placeholder="Password"
+            value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>

@@ -4,6 +4,13 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import Upload from "./pages/Upload";
 import Document from "./pages/Documents"
+import Search from "./pages/SearchDocuments"
+import PdfToDoc from "./pages/PdfToDoc";
+import DocToPdf from "./pages/DocToPdf";
+import MergePdf from "./pages/MergePdf";
+import SplitPdf from "./pages/SplitPdf";
+import CompressPdf from "./pages/CompressPdf";
+import SecurePdf from "./pages/SecurePdf";
 function App() {
   return (
     <BrowserRouter>
@@ -13,6 +20,13 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/upload" element={<Upload />} />
         <Route path="/documents" element={<Document />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/pdf-to-doc" element={<PdfToDoc />} />
+<Route path="/doc-to-pdf" element={<DocToPdf />} />
+<Route path="/merge-pdf" element={<MergePdf />} />
+<Route path="/split-pdf" element={<SplitPdf />} />
+<Route path="/compress-pdf" element={<CompressPdf />} />
+<Route path="/secure-pdf" element={<SecurePdf/>}/>
       </Routes>
     </BrowserRouter>
   );

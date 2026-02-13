@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./documents.css";
-import { FaEye, FaShareAlt } from "react-icons/fa";
+import { FaEye, FaShareAlt, FaFilePdf } from "react-icons/fa";
 
 export default function Documents() {
   const [docs, setDocs] = useState([]);
@@ -71,6 +71,38 @@ export default function Documents() {
     setCustomCategory("");
   };
 
+  // PDF → DOC converter
+  const convertPdfToDoc = async (doc) => {
+  try {
+    console.log("Sending filePath:", doc.path);
+
+    // const res = await axios.post(
+
+    //   "http://localhost:5000/api/documents/pdf-to-doc",
+    //   { filePath: doc.path },
+    //   { headers: { "Content-Type": "application/json" } }
+    // );
+
+    // window.open(res.data.docxUrl, "_blank");
+    const formData = new FormData();
+formData.append("file", selectedFile);
+
+const res = await axios.post(
+  "http://localhost:5000/api/documents/pdf-to-doc",
+  formData,
+  { headers: { "Content-Type": "multipart/form-data" } }
+);
+
+window.open(res.data.docxUrl, "_blank"); // Download converted file
+
+  } 
+  catch (err) {
+    console.log("Frontend error:", err);
+    alert("Conversion failed");
+  }
+};
+
+
   return (
     <div className="documents-page">
 
@@ -120,15 +152,26 @@ export default function Documents() {
               <p className="doc-category">{doc.category}</p>
 
               <div className="doc-actions">
+                {/* View */}
                 <FaEye
                   title="View"
                   onClick={() => window.open(doc.fileUrl, "_blank")}
                 />
 
+                {/* Share */}
                 <FaShareAlt
                   title="Share"
                   onClick={() => copyLink(doc.fileUrl)}
                 />
+
+                {/* PDF to DOC */}
+                {doc.filename.toLowerCase().endsWith(".pdf") && (
+                  <FaFilePdf
+                    title="PDF → DOC"
+                    onClick={() => convertPdfToDoc(doc)}
+                    style={{ cursor: "pointer" }}
+                  />
+                )}
               </div>
             </div>
           ))

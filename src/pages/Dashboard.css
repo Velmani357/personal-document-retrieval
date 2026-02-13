@@ -1,4 +1,4 @@
-.dashboard-container {
+/* .dashboard-container {
   min-height: 100vh;
   background: #f4f7fb;
 }
@@ -46,4 +46,103 @@
 .dash-card p {
   color: #555;
   font-size: 14px;
+} */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", "Poppins", sans-serif;
+}
+
+/* Background */
+.dashboard-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f6f9ff, #eef2ff);
+}
+
+/* Header */
+.dashboard-header {
+  background: white;
+  padding: 25px 40px;
+  border-bottom: 1px solid #e5eaf1;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.dashboard-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #4f46e5;
+  letter-spacing: 1px;
+}
+
+.dashboard-header p {
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+/* Grid */
+.dashboard-grid {
+  padding: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 30px;
+}
+
+/* Card */
+.dash-card {
+  background: white;
+  padding: 28px 22px;
+  border-radius: 18px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  border: 1px solid #edf1f7;
+}
+
+.dash-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+
+/* Icon */
+.dash-icon {
+  font-size: 42px;
+  margin-bottom: 15px;
+  color: #4f46e5;
+}
+
+/* Title */
+.dash-card h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Text */
+.dash-card p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* Different icon colors */
+.dash-card:nth-child(1) .dash-icon { color: #4f46e5; }
+.dash-card:nth-child(2) .dash-icon { color: #06b6d4; }
+.dash-card:nth-child(3) .dash-icon { color: #22c55e; }
+.dash-card:nth-child(4) .dash-icon { color: #f59e0b; }
+.dash-card:nth-child(5) .dash-icon { color: #ec4899; }
+.dash-card:nth-child(6) .dash-icon { color: #8b5cf6; }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .dashboard-header {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .dashboard-grid {
+    padding: 25px;
+  }
 }
